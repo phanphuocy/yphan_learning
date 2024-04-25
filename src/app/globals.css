@@ -17,17 +17,38 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* background: linear-gradient(-45deg, #F5FCFF, #DBF3FA, #DCE3F7, #F3F3F3, #DBF3FA); */
+  /* background-size: 400% 400%; */
+  animation: gradient 300s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.longforms-inline-image {
+  position: relative;
+  transform: translateX(-24px);
+  max-width: calc(100% + 48px);
+  filter: grayscale(1);
+}
+
+.longforms-inline-image:hover {
+  filter: grayscale(0);
+  transition: all 750ms ease;
 }

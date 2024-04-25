@@ -1,7 +1,10 @@
-import { Inter } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
+import Header from "../components/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["vietnamese"] });
+const roboto_mono = Roboto_Mono({ subsets: ["vietnamese"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={String.prototype.concat(roboto_mono.className, " ")}>
+        <Header />
+        <div className="max-w-3xl mx-auto p-16">{children}</div>
+      </body>
     </html>
   );
 }
